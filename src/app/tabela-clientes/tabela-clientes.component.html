@@ -1,0 +1,17 @@
+
+<h3>{{titulo}}</h3>
+  <div class="buttons">
+    <a class="btn btn-default" routerLink="/novo">Novo Cliente</a>
+  </div>
+<table class="table table-condensed">
+  <tr>
+    <th>Codigo</th> <th>Nome</th> <th>Data</th> <th>Editar</th> <th>Remover</th>
+  </tr>
+  <tr *ngFor='let cliente of clientes'>
+    <td>{{cliente.codigo}}</td>
+    <td>{{cliente.nome}}</td>
+    <td>{{cliente.data}}</td>
+    <td><a [routerLink]="['/edicao', cliente.codigo]">Editar</a></td>
+    <td><a routerLink="/lista" (click)="remover(cliente)">remover</a></td>
+  </tr>
+</table>

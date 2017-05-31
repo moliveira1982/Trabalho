@@ -1,0 +1,16 @@
+<h3>{{titulo}}</h3>
+  <div class="buttons">
+    <a class="btn btn-default" routerLink="/novopro">Nova Promoção</a>
+  </div>
+<table class="table table-condensed">
+  <tr>
+    <th>Codigo</th> <th>Promocao</th> <th>Desconto(%)</th> <th>Editar</th> <th>Remover</th>
+  </tr>
+  <tr *ngFor='let promocao of promocoes'>
+    <td>{{promocao.codigo}}</td>
+    <td>{{promocao.nome}}</td>
+    <td>{{promocao.desconto}}%</td>
+    <td><a [routerLink]="['/edicaopro', promocao.codigo]">Editar</a></td>
+    <td><a routerLink="/listapro" (click)="remover(promocao)">remover</a></td>
+  </tr>
+</table>

@@ -1,0 +1,18 @@
+<h3>{{titulo}}</h3>
+  <div class="buttons">
+    <a class="btn btn-default" routerLink="/novodesc">Novo Desconto</a>
+  </div>
+<table class="table table-condensed">
+  <tr>
+    <th>Codigo</th> <th>Cliente</th> <th>Promocao</th> <th>Descrição</th> <th>Data</th> <th>Editar</th> <th>Remover</th>
+  </tr>
+  <tr *ngFor='let desconto of descontos'>
+    <td>{{desconto.codigo}}</td>
+    <td>{{desconto.cod_cliente}}</td>
+    <td>{{desconto.cod_promocao}}</td>
+    <td>{{desconto.descricao}}</td>
+    <td>{{desconto.data}}</td>
+    <td><a [routerLink]="['/edicaodesc', desconto.codigo]">Editar</a></td>
+    <td><a routerLink="/desc" (click)="remover(desconto)">remover</a></td>
+  </tr>
+</table>
